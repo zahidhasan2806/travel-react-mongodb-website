@@ -13,9 +13,10 @@ const MyPackages = () => {
     }, [])
     const myOrders = orders.filter(order => user.email === order.email);
     return (
-        <div>
-            <Container>
-                <h1 className='text-center'>My Orders</h1>
+        <div className="my-5">
+            <h1 className="text-center">Welcome to TakeOff with ZaM</h1>
+            <Container className="my-5">
+                <h1>My Orders</h1>
                 <Row>
                     {
                         myOrders.map(myOrder => <MySinglePackage key={myOrder._id} myOrder={myOrder}></MySinglePackage>)
