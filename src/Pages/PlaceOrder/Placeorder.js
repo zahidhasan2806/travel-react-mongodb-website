@@ -43,36 +43,6 @@ const Placeorder = () => {
                         <h5>Price: {packages.price}</h5>
                     </Card.Body>
                 </Card>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* <h1>{packages.title}</h1>
-                <div className="card mb-3">
-                    <div className="row g-0">
-                        <div className="col-md-4">
-                            <img src={packages.picture1} className="img-fluid rounded-start" alt="..." />
-                        </div>
-                        <div className="col-md-8">
-                            <div className="card-body">
-                                <h5 className="card-title">{packages.title}</h5>
-                                <p className="card-text">{packages.about}</p>
-                                <p className="card-text fs-6">৳{packages.price}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
             </Col>
             <Col md={6} sm={12} className='text-center'>
                 <form className="pt-3 pb-5" onSubmit={handleSubmit(onSubmit)}>
