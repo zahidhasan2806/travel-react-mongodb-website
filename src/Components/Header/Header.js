@@ -33,9 +33,6 @@ const Header = () => {
                             <Nav.Link activeStyle={activeStyle} as={NavLink} to="/about" className="text-dark">
                                 About
                             </Nav.Link>
-                            {/* <Nav.Link activeStyle={activeStyle} as={NavLink} to="/doctor" className="text-dark">
-                                Doctors
-                            </Nav.Link> */}
                             {!user.email ? <> <Nav.Link activeStyle={activeStyle} as={NavLink} to="/login" className="text-dark">
                                 Login
                             </Nav.Link>
