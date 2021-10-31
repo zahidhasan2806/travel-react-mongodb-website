@@ -1,6 +1,6 @@
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
@@ -17,13 +17,13 @@ const Package = (props) => {
                     <Card.Text>
                         {(about).slice(0, 90)}..............
                     </Card.Text>
-                    <Card.Text className="fs-6">
+                    <div className="fs-6">
                         <Row>
                             <Col md={6} sm={12}>৳ {price}</Col>
                             <Col md={6} sm={12}><FontAwesomeIcon icon={faClock}></FontAwesomeIcon>{duration}</Col>
 
                         </Row>
-                    </Card.Text>
+                    </div>
                 </Card.Body>
                 <Card.Footer className="bg-primary bg-opacity-10 p-0">
                     <Link to={`/packages/${_id}`}>
@@ -35,4 +35,4 @@ const Package = (props) => {
     );
 };
 
-export default Package; <h1>package</h1>
+export default Package;

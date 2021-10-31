@@ -9,8 +9,8 @@ const Discount = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-8">
-                                <h2>Get 30% on top destination</h2>
-                                <p>Book your Package before 15th of November and avail 30% flat discount</p>
+                                <h2>Get 15% on top destination</h2>
+                                <p>Book your Package before 15th of November and avail 15% flat discount</p>
                             </div>
                             <div className="col-md-4">
                                 <button className="btn btn-outline-success">Book Now</button>

@@ -4,8 +4,7 @@ import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
 import { useParams } from 'react-router';
-import UseBookNow from '../../Hooks/UseBookNow';
-import { Col, Row } from 'react-bootstrap';
+import { Button, Card, Col, Row } from 'react-bootstrap';
 
 
 
@@ -32,21 +31,48 @@ const Placeorder = () => {
     return (
         <Row className="m-0">
             <Col md={6} sm={12} >
-                <h1>{packages.title}</h1>
-                <div class="card mb-3">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src={packages.picture1} class="img-fluid rounded-start" alt="..." />
+                <Card style={{ width: '25rem' }}>
+                    <Card.Img variant="top" src={packages.picture1} />
+                    <Card.Body>
+                        <Card.Title>{packages.title}</Card.Title>
+                        <Card.Text>
+                            {packages.about}
+                        </Card.Text>
+                        <h5>Ordered By:{user.displayName}</h5>
+                        <h5>Email: {user.email}</h5>
+                        <h5>Price: {packages.price}</h5>
+                    </Card.Body>
+                </Card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <h1>{packages.title}</h1>
+                <div className="card mb-3">
+                    <div className="row g-0">
+                        <div className="col-md-4">
+                            <img src={packages.picture1} className="img-fluid rounded-start" alt="..." />
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{packages.title}</h5>
-                                <p class="card-text">{packages.about}</p>
-                                <p class="card-text fs-6">৳{packages.price}</p>
+                        <div className="col-md-8">
+                            <div className="card-body">
+                                <h5 className="card-title">{packages.title}</h5>
+                                <p className="card-text">{packages.about}</p>
+                                <p className="card-text fs-6">৳{packages.price}</p>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </Col>
             <Col md={6} sm={12} className='text-center'>
                 <form className="pt-3 pb-5" onSubmit={handleSubmit(onSubmit)}>

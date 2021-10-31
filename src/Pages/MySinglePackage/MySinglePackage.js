@@ -1,10 +1,15 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card, Col, Modal, Button } from 'react-bootstrap';
+import { useState } from 'react';
+
 
 const MySinglePackage = (props) => {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleNoBtn = () => setShow(false);
     const { Package, status, Price, _id } = props.myOrder;
     const handleDeleteOrder = id => {
-        const url = `https://creepy-goosebumps-33839.herokuapp.com/${id}`;
+        const url = `https://creepy-goosebumps-33839.herokuapp.com/orders/${id}`;
 
         fetch(url, {
             method: 'DELETE'
@@ -15,7 +20,7 @@ const MySinglePackage = (props) => {
                     window.location.reload()
                 }
             })
-        // .finally(setShow(false))
+            .finally(setShow(false))
     };
     return (
 
@@ -27,11 +32,22 @@ const MySinglePackage = (props) => {
                     <Card.Text>
                         Price:{Price}
                     </Card.Text>
-                    <Card.Link href="#" as="button" className="btn btn-danger" onClick={() => handleDeleteOrder(_id)}>Remove</Card.Link>
-
+                    <Card.Link href="#" as="button" className="btn btn-danger" onClick={() => setShow(true)}>Remove</Card.Link>
                 </Card.Body>
             </Card>
+            <Modal show={show} onHide={handleClose}>
 
+                <Modal.Body>Are you sure?</Modal.Body>
+                <Modal.Footer>
+
+                    <Button variant="secondary" onClick={() => { handleDeleteOrder(_id) }}>
+                        Yes
+                    </Button>
+                    <Button variant="primary" onClick={handleNoBtn}>
+                        No
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </Col>
     );
 };
