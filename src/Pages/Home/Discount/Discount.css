@@ -1,0 +1,15 @@
+.banner{
+    height: 80%;
+    background-image: url(../../../Images/discount.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.banner-highlights{
+   padding: 50px 0;
+   background: rgba(0, 0, 0, 0.7);
+   text-align: center;
+   color: #fff;
+}
